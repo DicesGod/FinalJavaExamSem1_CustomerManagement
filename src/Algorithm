@@ -1,0 +1,87 @@
+START
+    Array customerlist
+    int selection;
+    int index = 0;
+    String stringid;
+	int id;
+	String firstname;
+	String lastname;
+	String email;
+	String address;
+	int phonenumber;
+	int searchid;
+	
+	PRINT("Welcome to Customer Management application! \n");
+	PRINT("Please choice the following options: \n");
+	PRINT("1. Adding a new customer!");
+	PRINT("2. Search a customer by his id!");
+	PRINT("3. Display the customers!");
+	PRINT("4. Exit the application!");
+	READ selection
+	CHECK IF selection IS INTERGER OR NOT
+	SWITCH
+		START SWITCH
+			SWITCH = 1 (ADD NEW)
+			
+				PRINT("Please enter the customer id: ")
+				READ id;
+				CHECK IF ID IS INTERGER OR NOT
+				
+				PRINT("Please enter the first name: ")
+				READ firstname;
+				
+				PRINT("Please enter the last name: ")
+				READ lastname;
+				
+				PRINT("Please enter the email name: ")
+				READ email;
+				
+				PRINT("Please enter the address name: ")
+				READ address;
+				
+				PRINT("Please enter the phone number name:")
+				READ phonenumber
+				CHECK IF phonenumber IS INTERGER OR NOT
+				
+				If index >= 10
+					START IF
+						PRINT("The array is full! (Maximum is 10 customers!)
+					END IF
+					
+				CREATE A CUSTOMER OBJECT WITH THE DATA AND ADD TO customerlist ARRAY
+				Increase index by 1
+				PRINT("THE CUSTOMER HAS BEEN ADDED!");
+				
+			SWITCH = 2 (SEARCH)
+				PRINT("Please enter the customer id: ")
+				READ inputedid;
+				LOOP
+					START LOOP
+						IF searchid = id of customerlist at index 0
+						PRINT customer
+						REPEAT with customerlist at index 1, 2 until index 10
+						BREAK IF FOUND
+						IF NOT
+						PRINT "Customer not found!"
+				END LOOP
+				
+			SWITCH = 3 (DISPLAY ALL)
+				LOOP
+					START LOOP
+						PRINT customer customerlist at index 0
+						REPEAT with customerlist at index 1, 2 until index 10
+				END LOOP
+				
+			SWITCH = 4 (Exit with confirmation)
+				PRINT: Are you sure you want to quit? Enter 0 to confirm, or other value to continue.
+				READ selection	
+				IF selection = 0
+						PRINT: Thanks!Have a good day!
+				END IF
+				ELSE 
+					START ELSE
+						PRINT: You just decided to continue!
+						Back to MAIN MENU
+					END ELSE
+	END SWITCH
+END
